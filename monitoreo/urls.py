@@ -21,5 +21,7 @@ from dispositivos.views import inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio),
+    path('', inicio, name="inicio"),
+    path('dispositivos/', inicio, name="dispositivos"),
+    path('dispositivos/<int:dispositivo_id>/', inicio, name="dispositivo"),
 ]

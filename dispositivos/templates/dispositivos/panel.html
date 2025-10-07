@@ -11,5 +11,15 @@
     {% for d in dispositivos %}
         <p>Dispositivo: {{ d.nombre }} - Consumo: {{ d.consumo }} - Estado: {{ d.estado }}</p>
     {% endfor %}
+    <h1>PARTE 2</h1>
+    <ul>
+        {% for d in dispositivos %}
+            <li> {{ d.nombre }} - {{ d.categoria.nombre }}- {{ d.estado }}
+                ir a <a href="{% url 'dispositivo' d.id %}">Detalles</a>
+            </li>
+            {% empty %}
+            <li>No hay dispositivos disponibles.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
